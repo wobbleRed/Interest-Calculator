@@ -11,10 +11,15 @@
     crossorigin="anonymous">
 
   <title>Loan Calculator</title>
+  <style>
+    #loading, #results {
+      display: none;
+    }
+  </style>
 </head>
 
 <body class="bg-dark">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-6 mx-auto">
         <div class="card card-body text-center mt-5">
@@ -29,19 +34,21 @@
             <div class="form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">%</span>
-                <input type="number" class="form-control" id="interest" placeholder="Interest">
+                <input type="number" class="form-control" id="interest" placeholder="Interest Rate">
               </div>
             </div>
             <div class="form-group">
-              <input type="number" class="form-control" id="years" placeholder="Loan Lifespan in Years">
+              <input type="number" class="form-control" id="years" placeholder="Loan Lifespan (Years)">
             </div>
             <div class="form-group">
               <input type="submit" value="Calculate" class="btn btn-dark btn-block">
             </div>
           </form>
+          <input type="button" id="clear-inputs" value="Reset" class="btn btn-dark btn-block">
+
           <!-- LOADER WILL GO HERE -->
           <div id="loading">
-            <!-- <img src="./loading.gif" alt="Loading Icon"> -->
+            <img src="./images/loading.gif" alt="Loading Icon">
           </div>
           <!-- results -->
           <div id="results" class="pt-4">
